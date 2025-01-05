@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { Settings, Book, Clipboard, BarChart, Users } from "lucide-react";
+import StudentCard from "@/components/Cards/StudentCard";
+import TeacherCard from "@/components/Cards/TeachersCard";
+import CourseCard from "@/components/Cards/CourseCard";
+import FacultyRoomCard from "@/components/Cards/FacultyRoomCard";
 
 const Page = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -128,7 +132,7 @@ const Page = () => {
           <ul className="space-y-2 font-medium">
             <li>
               <a
-                href="#"
+                href="/dashboard"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -192,7 +196,15 @@ const Page = () => {
         </div>
       </aside>
 
-      <div className="pt-20">{/* Main content here */}</div>
+      <div className="pt-20">
+        {/* Main content here */}
+        <div className=" flex gap-8 ml-[300px] ">
+          <StudentCard totalStudents={122} />
+          <TeacherCard totalTeachers={44} />
+          <CourseCard totalCourses={33} />
+          <FacultyRoomCard totalFacultyRoom={100} />
+        </div>
+      </div>
     </div>
   );
 };
